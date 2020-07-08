@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import Enum, auto
-from random import randrange
+from random import randint
 from time import sleep
 from typing import Optional, Tuple
 
@@ -46,7 +46,7 @@ def ask_if_wanna_continue(player_name: str) -> bool:
     else:
         if ask_if_yes(f"{player_name} did you find the treasure I prepared for you? "):
 
-            print("Congratulations, you may leave now!!!")
+            print("I hope you are not lying, you may leave now!!!")
             sleep(1)
         else:
             print("What a shame! you broke my heart :'(")
@@ -60,13 +60,13 @@ def roll_for_item(player_name: str) -> Tuple[Optional[GameItem], GameStatus]:
     It returns the item that the player gained (if any),
     and the status of the player after the roll.
     """
-    roll = randrange(1, 20)
+    roll = randint(1, 20)
     if player_name.lower() == "lurin":
         print(f"You rolled {roll}!")
         sleep(2)
         if ask_if_yes("Since you are inspired... wanna roll again? "):
             sleep(2)
-            roll = randrange(1, 20)
+            roll = randint(1, 20)
             print(f"Now your roll was {roll}")
     if roll == 1:
         print(f"HAHAHAHAHA, tragic! You got {roll}")
@@ -218,7 +218,7 @@ def flee(player_name: str) -> GameStatus:
         )
         sleep(4)
         if roll_the_dice == "roll stealth":
-            roll = randrange(1, 20)
+            roll = randint(1, 20)
             if roll <= 10:
                 print(f"you rolled {roll}!")
                 sleep(2)
@@ -358,7 +358,7 @@ def decide_if_strahd_flies(player_name: str) -> bool:
     roll_the_dice = input("type: 'roll stealth' ")
     sleep(2)
     if roll_the_dice == "roll stealth":
-        roll = randrange(1, 20)
+        roll = randint(1, 20)
         if roll <= 10:
             print("...")
             sleep(1)
@@ -468,7 +468,7 @@ def roll_for_win(probability: int) -> bool:
     This function returns whether the player defeats STRAHD,
     given a probability.
     """
-    return randrange(100) <= probability
+    return randint(1, 100) <= probability
 
 
 def after_battle(player_race: str, player_name: str, did_win: bool) -> GameStatus:
