@@ -622,7 +622,7 @@ def after_battle(player_race: str, player_name: str, did_win: bool) -> GameStatu
                 sleep(2)
                 print("...")
                 sleep(1)
-                print("https://drive.google.com/drive/folders/1eP552hYwUXImmJ-DIX5o-wlp5VA96Sa0?usp=sharing")
+                print("https://drive.google.com/drive/folders/19GRJJdlB8NbNl3QDXQM1-0ctXSX3mbwS?usp=sharing")
                 sleep(5)
                 print("...Your motherfuger iron wall !!!")
                 sleep(2)
